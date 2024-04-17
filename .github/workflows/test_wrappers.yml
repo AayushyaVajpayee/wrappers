@@ -43,7 +43,7 @@ jobs:
           postgresql-15 \
           postgresql-server-dev-15
         sudo chmod a+rwx `/usr/lib/postgresql/15/bin/pg_config --pkglibdir` `/usr/lib/postgresql/15/bin/pg_config --sharedir`/extension /var/run/postgresql/
-
+    - uses: Swatinem/rust-cache@v2
     - run: cargo install cargo-pgrx --version 0.11.3
     - run: cargo pgrx init --pg15 /usr/lib/postgresql/15/bin/pg_config
 
